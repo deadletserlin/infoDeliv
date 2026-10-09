@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Tambah Layanan - infoDeliv</title>
+</head>
+<body>
+
+    <header>
+        <h1>infoDeliv</h1>
+        <p>Informasi layanan delivery untuk mahasiswa</p>
+
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="tambah.html">Tambah Layanan</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Tambah Layanan Delivery</h2>
+        <p>Masukkan informasi layanan delivery yang ingin ditambahkan.</p>
+
+        <article>
+            <h3>Formulir Layanan</h3>
+
+            <form action="#" method="post">
+
+                <p>
+                    <label for="nama">Nama Layanan:</label><br>
+                    <input type="text" id="nama" name="nama"
+                           placeholder="Masukkan nama layanan">
+                </p>
+
+                <p>
+                    <label for="jenis">Jenis Layanan:</label><br>
+                    <select id="jenis" name="jenis">
+                        <option value="">Pilih jenis layanan</option>
+                        <option value="makanan">Delivery Makanan</option>
+                        <option value="barang">Delivery Barang</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="kontak">Nomor Kontak:</label><br>
+                    <input type="tel" id="kontak" name="kontak"
+                           placeholder="Masukkan nomor kontak">
+                </p>
+
+                <p>
+                    <label for="wilayah">Wilayah Layanan:</label><br>
+                    <input type="text" id="wilayah" name="wilayah"
+                           placeholder="Contoh: Bandung">
+                </p>
+
+                <p>
+                    <label for="harga">Informasi Harga:</label><br>
+                    <input type="text" id="harga" name="harga"
+                           placeholder="Contoh: sesuai menu">
+                </p>
+
+                <p>
+                    <label for="deskripsi">Deskripsi Layanan:</label><br>
+                    <textarea id="deskripsi" name="deskripsi"
+                              rows="4" cols="30"
+                              placeholder="Jelaskan layanan delivery"></textarea>
+                </p>
+
+                <button type="submit">Simpan</button>
+                <button type="reset">Reset</button>
+
+            </form>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 infoDeliv. Informasi layanan delivery untuk mahasiswa.</p>
+    </footer>
+
+</body>
+</html>
