@@ -1,0 +1,201 @@
+
+/* Pengaturan dasar halaman */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #263238;
+    background-color: #f4f7fb;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Bagian header */
+header {
+    background-color: #176b87;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0;
+}
+
+header p {
+    font-size: 16px;
+}
+
+/* Navigasi */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Konten utama */
+main {
+    max-width: 1100px;
+    margin: 25px auto;
+    padding: 20px;
+    background-color: white;
+}
+
+h2 {
+    color: #176b87;
+    font-size: 26px;
+    text-align: center;
+}
+
+h3 {
+    color: #176b87;
+    font-size: 21px;
+}
+
+/* Pengelompokan konten */
+article {
+    margin-bottom: 25px;
+}
+
+.info-layanan {
+    background-color: #eaf4f7;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 8px;
+}
+
+/* Tabel layanan */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th,
+td {
+    border: 1px solid #b0bec5;
+    padding: 10px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+th {
+    background-color: #176b87;
+    color: white;
+    text-align: center;
+}
+
+td img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Formulir */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form p {
+    margin-bottom: 18px;
+}
+
+label {
+    display: inline-block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    border: 1px solid #90a4ae;
+    border-radius: 5px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    padding: 10px 18px;
+    margin-right: 8px;
+    background-color: #176b87;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #10536a;
+}
+
+/* Footer */
+footer {
+    background-color: #176b87;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+/* Tampilan untuk layar mobile */
+@media (max-width: 600px) {
+    header {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 26px;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    main {
+        margin: 12px;
+        padding: 12px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    table {
+        font-size: 13px;
+    }
+
+    th,
+    td {
+        padding: 6px;
+    }
+
+    button {
+        margin-bottom: 8px;
+    }
+}
