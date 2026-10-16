@@ -189,3 +189,12 @@ footer {
         margin-bottom: 8px;
     }
 }
+
+ul, ol {
+    padding-left: 25px;
+    margin-bottom: 15px;
+}
+
+li {
+    margin-bottom: 5px;
+}
