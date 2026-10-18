@@ -198,3 +198,32 @@ ul, ol {
 li {
     margin-bottom: 5px;
 }
+
+
+#cari-layanan,
+#form-layanan input {
+    padding: 8px;
+    margin: 5px 0 12px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+#form-layanan {
+    margin: 15px 0;
+}
+
+#form-layanan label {
+    display: block;
+}
+
+#tombol-form,
+#form-layanan button {
+    padding: 8px 12px;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+#jumlah-layanan,
+#pesan-form {
+    font-weight: bold;
+}
