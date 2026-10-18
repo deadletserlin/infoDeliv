@@ -1,16 +1,34 @@
-# React + Vite
+# infoDeliv
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Deskripsi
+infoDeliv adalah aplikasi yang dibuat untuk membantu mahasiswa mendapatkan informasi layanan antar makanan, seperti nama layanan, kontak, wilayah pelayanan, dan perkiraan harga.
 
-Currently, two official plugins are available:
+## Teknologi
+- HTML dan CSS
+- React
+- Bootstrap
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tugas yang Dikerjakan
+- **Task 2:** Membuat halaman HTML untuk aplikasi infoDeliv.
+- **Task 3:** Mengatur tampilan halaman menggunakan CSS.
+- **Task 4:** Membuat tampilan frontend menggunakan React dan Bootstrap.
 
-## React Compiler
+## Alasan Memilih Bootstrap
+Saya menggunakan Bootstrap karena class yang tersedia memudahkan pembuatan tampilan website dan membantu membuat tampilan yang responsif di desktop maupun mobile.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Fitur
+- Dashboard
+- Daftar layanan antar
+- Detail informasi layanan
+- Form tambah layanan
 
-## Expanding the ESLint configuration
+## Cara Menjalankan React
+1. Buka terminal di folder `react-app`.
+2. Jalankan `npm install`.
+3. Jalankan `npm run dev`.
+4. Buka alamat localhost yang muncul di terminal.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Screenshot
+- Screenshot Task 2: `screenshots_docs/tugas2/`
+- Screenshot Task 3: `screenshots_docs/tugas3/`
+- Screenshot Task 4: `screenshots_docs/tugas4/`
