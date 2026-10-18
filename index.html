@@ -11,6 +11,7 @@
     <header>
         <h1>infoDeliv</h1>
         <p>Informasi layanan delivery untuk mahasiswa</p>
+
         <nav>
             <a href="index.html">Beranda</a>
             <a href="tambah.html">Tambah Layanan</a>
@@ -21,21 +22,31 @@
         <h2>Daftar Layanan Delivery</h2>
 
         <div class="info-layanan">
-            <p>Temukan informasi layanan delivery, harga, dan wilayah tujuan.</p>
+            <p>
+                Temukan informasi layanan delivery, kontak, dan
+                wilayah tujuan di sekitar kampus.
+            </p>
         </div>
 
         <article>
             <h3>Daftar Layanan</h3>
 
-            <p id="jumlah-layanan"></p>
+            <p id="jumlah-layanan">Memuat layanan...</p>
 
             <label for="cari-layanan">Cari layanan:</label>
-            <input type="text" id="cari-layanan" placeholder="Masukkan nama layanan">
+            <input
+                type="text"
+                id="cari-layanan"
+                placeholder="Masukkan nama atau wilayah"
+            >
 
-            <button type="button" id="tombol-form">Tampilkan Form</button>
+            <button type="button" id="tombol-form">
+                Tampilkan Form
+            </button>
 
             <div id="area-form" style="display: none;">
                 <h3>Tambah Layanan</h3>
+
                 <form id="form-layanan">
                     <label for="nama-layanan">Nama layanan:</label>
                     <input type="text" id="nama-layanan" required>
@@ -48,27 +59,33 @@
 
                     <button type="submit">Simpan Layanan</button>
                 </form>
-                <p id="pesan-form"></p>
+
+                <p id="pesan-form" aria-live="polite"></p>
             </div>
 
-            <table border="1">
-                <thead>
-                    <tr>
-                        <th>Layanan</th>
-                        <th>Menu</th>
-                        <th>Jenis</th>
-                        <th>Info Kontak</th>
-                        <th>Wilayah</th>
-                        <th>Detail</th>
-                    </tr>
-                </thead>
-                <tbody id="daftar-layanan"></tbody>
-            </table>
+            <div class="tabel-responsif">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Layanan</th>
+                            <th>Menu</th>
+                            <th>Jenis</th>
+                            <th>Info Kontak</th>
+                            <th>Wilayah</th>
+                            <th>Detail</th>
+                        </tr>
+                    </thead>
+                    <tbody id="daftar-layanan"></tbody>
+                </table>
+            </div>
         </article>
     </main>
 
     <footer>
-        <p>&copy; 2026 infoDeliv. Informasi layanan delivery untuk mahasiswa.</p>
+        <p>
+            &copy; 2026 infoDeliv.
+            Informasi layanan delivery untuk mahasiswa.
+        </p>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
