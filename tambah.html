@@ -36,29 +36,33 @@
             <p>Isi formulir berikut untuk menambahkan informasi layanan delivery.</p>
         </section>
 
-        <form class="add-form" id="formLayanan">
-            <h2>Formulir Layanan</h2>
+        <div class="add-layout">
+            <button type="button" id="btn-form">+ Tambah Layanan</button>
 
-            <label for="nama">Nama Gerai</label>
-            <input type="text" id="nama" placeholder="Masukkan nama gerai" required>
+            <form class="add-form" id="formLayanan" style="display: none;">
+                <h2>Formulir Layanan</h2>
 
-            <label for="kontak">Nomor Kontak</label>
-            <input type="text" id="kontak" placeholder="Masukkan nomor kontak" required>
+                <label for="nama">Nama Gerai</label>
+                <input type="text" id="nama" placeholder="Masukkan nama gerai" required>
 
-            <label for="wilayah">Wilayah Layanan</label>
-            <input type="text" id="wilayah" placeholder="Masukkan wilayah layanan" required>
+                <label for="kontak">Nomor Kontak</label>
+                <input type="text" id="kontak" placeholder="Masukkan nomor kontak" required>
 
-            <label for="ongkir">Informasi Ongkir</label>
-            <input type="text" id="ongkir" placeholder="Contoh: Rp2.000" required>
+                <label for="wilayah">Wilayah Layanan</label>
+                <input type="text" id="wilayah" placeholder="Masukkan wilayah layanan" required>
 
-            <label for="deskripsi">Deskripsi</label>
-            <textarea id="deskripsi" placeholder="Informasi tambahan tentang gerai" required></textarea>
+                <label for="ongkir">Informasi Ongkir</label>
+                <input type="text" id="ongkir" placeholder="Contoh: Rp2.000" required>
 
-            <div class="form-buttons">
-                <button type="submit">Simpan</button>
-                <button type="reset" class="reset-btn">Reset</button>
-            </div>
-        </form>
+                <label for="deskripsi">Deskripsi</label>
+                <textarea id="deskripsi" placeholder="Informasi tambahan tentang gerai" required></textarea>
+
+                <div class="form-buttons">
+                    <button type="submit">Simpan</button>
+                    <button type="reset" class="reset-btn">Reset</button>
+                </div>
+            </form>
+        </div>
     </main>
 
     <footer class="site-footer">
@@ -72,6 +76,7 @@
         <p>© 2026 infoDeliv · Informasi kedai, menu, dan ongkir sekitar kampus.</p>
     </footer>
 
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script>
         const t = document.getElementById("nav-toggle");
         const n = document.getElementById("site-nav");
@@ -81,10 +86,29 @@
             t.setAttribute("aria-expanded", String(buka));
         });
 
-        document.getElementById("formLayanan").addEventListener("submit", function(e) {
-            e.preventDefault();
-            alert("Formulir berhasil diisi!");
+        $(document).ready(function () {
+            $("#btn-form").on("click", function () {
+                $("#formLayanan").stop(true, true).slideToggle();
+            });
+
+            $("#formLayanan").on("submit", function (e) {
+                e.preventDefault();
+
+                const nama = $("#nama").val().trim();
+                const kontak = $("#kontak").val().trim();
+                const wilayah = $("#wilayah").val().trim();
+                const ongkir = $("#ongkir").val().trim();
+                const deskripsi = $("#deskripsi").val().trim();
+
+                if (!nama || !kontak || !wilayah || !ongkir || !deskripsi) {
+                    alert("Semua kolom harus diisi!");
+                    return;
+                }
+
+                alert("Data layanan berhasil divalidasi!");
+            });
         });
     </script>
 </body>
+
 </html>
