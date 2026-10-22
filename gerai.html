@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Gerai — infoDeliv</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html"><span
+                class="brand-mark">id</span><span><strong>infoDeliv</strong><small>Temukan makan, cek
+                    ongkir.</small></span></a>
+        <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Buka navigasi"
+            aria-expanded="false">☰</button>
+        <nav class="site-nav" id="site-nav"><a class="" href="index.html">Dashboard</a><a class="active"
+                href="gerai.html">Gerai</a><a class="" href="ongkir.html">Info Ongkir</a><a class=""
+                href="tambah.html">Tambah Layanan</a></nav>
+    </header>
+    <main>
+        <section class="page-intro">
+            <p class="eyebrow">TEMUKAN KEDAI FAVORITMU</p>
+            <h1>Daftar gerai</h1>
+            <p>Lihat pilihan kedai, wilayah layanan, dan informasi ongkir. Tekan kartu gerai untuk melihat detail menu
+                dan kontak.</p>
+        </section>
+        <label class="search-box" for="cari-layanan"><span>⌕</span><input type="search" id="cari-layanan"
+                placeholder="Cari nama gerai, wilayah, atau ongkir..." autocomplete="off"><button type="button"
+                id="hapus-pencarian" aria-label="Hapus pencarian">×</button></label>
+        <div class="store-grid" id="daftar-gerai"></div>
+        <p class="empty-state" id="empty-state" hidden>Gerai tidak ditemukan. Coba kata kunci lain.</p>
+    </main>
+    <footer class="site-footer"><a class="brand footer-brand" href="index.html"><span
+                class="brand-mark">id</span><span><strong>infoDeliv</strong><small>Informasi delivery sekitar
+                    kampus.</small></span></a>
+        <p>© 2026 infoDeliv · Informasi kedai, menu, dan ongkir sekitar kampus.</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
