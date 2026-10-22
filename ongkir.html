@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info Ongkir — infoDeliv</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html"><span
+                class="brand-mark">id</span><span><strong>infoDeliv</strong><small>Temukan makan, cek
+                    ongkir.</small></span></a>
+        <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Buka navigasi"
+            aria-expanded="false">☰</button>
+        <nav class="site-nav" id="site-nav"><a class="" href="index.html">Dashboard</a><a class=""
+                href="gerai.html">Gerai</a><a class="active" href="ongkir.html">Info Ongkir</a><a class=""
+                href="tambah.html">Tambah Layanan</a></nav>
+    </header>
+    <main>
+        <section class="page-intro">
+            <p class="eyebrow">BIAYA PENGANTARAN</p>
+            <h1>Info ongkir & jadwal gerai</h1>
+            <p>Bandingkan biaya antar tiap gerai. Kolom jam buka dan tutup sengaja disiapkan supaya bisa kamu isi
+                sendiri sesuai jadwal yang benar.</p>
+        </section>
+        <div class="note-strip"><span class="note-icon">i</span>
+            <p>Untuk wilayah di luar ketentuan ongkir yang tertulis, silakan konfirmasi langsung ke kedai. Jadwal buka
+                dan tutup di bawah ini perlu kamu lengkapi.</p>
+        </div>
+        <div class="table-wrap">
+            <table class="fee-table">
+                <thead>
+                    <tr>
+                        <th>Nama gerai</th>
+                        <th>Informasi ongkir</th>
+                        <th>Jadwal buka</th>
+                        <th>Jadwal tutup</th>
+                        <th>Detail</th>
+                    </tr>
+                </thead>
+                <tbody id="tabel-ongkir-body"></tbody>
+            </table>
+        </div>
+    </main>
+    <footer class="site-footer"><a class="brand footer-brand" href="index.html"><span
+                class="brand-mark">id</span><span><strong>infoDeliv</strong><small>Informasi delivery sekitar
+                    kampus.</small></span></a>
+        <p>© 2026 infoDeliv · Informasi kedai, menu, dan ongkir sekitar kampus.</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
