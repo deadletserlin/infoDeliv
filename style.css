@@ -227,3 +227,43 @@ li {
 #pesan-form {
     font-weight: bold;
 }
+
+
+/*Tabel layanan agar nyaman dilihat */
+.tabel-responsif {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 15px;
+}
+
+.tabel-responsif table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabel-responsif th,
+.tabel-responsif td {
+    padding: 10px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.tabel-responsif img {
+    width: 100px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/*Link detail layanan */
+#daftar-layanan a {
+    display: inline-block;
+    padding: 6px 10px;
+}
+
+/*Tampilan pada HP */
+@media (max-width: 600px) {
+    .tabel-responsif table {
+        min-width: 650px;
+    }
+}
