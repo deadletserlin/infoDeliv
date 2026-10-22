@@ -20,6 +20,20 @@ const dataLayanan = [
         wilayah: "Bandung, Jakarta",
         gambar: "images/dongmoon.jpeg",
         detail: "detail-menu/detail-dongmoon.html"
+    },
+    {
+        nama: "Chinese Food",
+        kontak: "+62 812-2327-8852",
+        wilayah: "Sukabirus, depan gate 2 WDP",
+        gambar: "images/chineseFood.jpeg",
+        detail: "detail-menu/detail-chineseFood.html"
+    },
+    {
+        nama: "Kantin Pahlawan",
+        kontak: "+62 895-1814-6988",
+        wilayah: "Sukapura",
+        gambar: "images/kantinPahlawan.jpeg",
+        detail: "detail-menu/detail-kantinPahlawan.html"
     }
 ];
 
@@ -64,15 +78,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const pencarian = document.getElementById("cari-layanan");
 
+
     pencarian.addEventListener("input", function () {
-        const kataKunci = pencarian.value.toLowerCase();
+        const kataKunci = pencarian.value
+            .toLowerCase()
+            .trim();
 
         const hasilFilter = dataLayanan.filter(function (layanan) {
-            return layanan.nama.toLowerCase().includes(kataKunci);
+            const nama = layanan.nama.toLowerCase();
+            const wilayah = layanan.wilayah.toLowerCase();
+
+            return nama.includes(kataKunci) ||
+                wilayah.includes(kataKunci);
         });
 
         tampilkanLayanan(hasilFilter);
     });
+
 });
 
 $(document).ready(function () {
