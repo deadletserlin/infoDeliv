@@ -1,94 +1,74 @@
-
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>infoDeliv</title>
+    <title>Dashboard — infoDeliv</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <header>
-        <h1>infoDeliv</h1>
-        <p>Informasi layanan delivery untuk mahasiswa</p>
-
-        <nav>
-            <a href="index.html">Beranda</a>
-            <a href="tambah.html">Tambah Layanan</a>
-        </nav>
+    <header class="site-header">
+        <a class="brand" href="index.html"><span
+                class="brand-mark">id</span><span><strong>infoDeliv</strong><small>Temukan makan, cek
+                    ongkir.</small></span></a>
+        <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Buka navigasi"
+            aria-expanded="false">☰</button>
+        <nav class="site-nav" id="site-nav"><a class="active" href="index.html">Dashboard</a><a class=""
+                href="gerai.html">Gerai</a><a class="" href="ongkir.html">Info Ongkir</a><a class=""
+                href="tambah.html">Tambah Layanan</a></nav>
     </header>
-
     <main>
-        <h2>Daftar Layanan Delivery</h2>
-
-        <div class="info-layanan">
-            <p>
-                Temukan informasi layanan delivery, kontak, dan
-                wilayah tujuan di sekitar kampus.
-            </p>
-        </div>
-
-        <article>
-            <h3>Daftar Layanan</h3>
-
-            <p id="jumlah-layanan">Memuat layanan...</p>
-
-            <label for="cari-layanan">Cari layanan:</label>
-            <input
-                type="text"
-                id="cari-layanan"
-                placeholder="Masukkan nama atau wilayah"
-            >
-
-            <button type="button" id="tombol-form">
-                Tampilkan Form
-            </button>
-
-            <div id="area-form" style="display: none;">
-                <h3>Tambah Layanan</h3>
-
-                <form id="form-layanan">
-                    <label for="nama-layanan">Nama layanan:</label>
-                    <input type="text" id="nama-layanan" required>
-
-                    <label for="kontak-layanan">Kontak:</label>
-                    <input type="text" id="kontak-layanan" required>
-
-                    <label for="wilayah-layanan">Wilayah:</label>
-                    <input type="text" id="wilayah-layanan" required>
-
-                    <button type="submit">Simpan Layanan</button>
-                </form>
-
-                <p id="pesan-form" aria-live="polite"></p>
+        <section class="hero">
+            <div class="hero-copy">
+                <p class="eyebrow">KULINER SEKITAR KAMPUS</p>
+                <h1>Makan enak,<br><em>ongkir jelas.</em></h1>
+                <p class="hero-description">Temukan gerai, lihat menu, dan cek informasi delivery tanpa harus mencari
+                    satu per satu.</p><a class="button button-light" href="gerai.html">Jelajahi gerai <span>↗</span></a>
             </div>
-
-            <div class="tabel-responsif">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Layanan</th>
-                            <th>Menu</th>
-                            <th>Jenis</th>
-                            <th>Info Kontak</th>
-                            <th>Wilayah</th>
-                            <th>Detail</th>
-                        </tr>
-                    </thead>
-                    <tbody id="daftar-layanan"></tbody>
-                </table>
+            <div class="hero-art" aria-hidden="true">
+                <div class="orbit orbit-one"></div>
+                <div class="orbit orbit-two"></div>
+                <div class="hero-note"><span>Teman lapar</span><strong>dekat kampus.</strong></div><span
+                    class="spark">✳</span>
             </div>
-        </article>
+        </section>
+        <section class="content-section">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">PILIHAN SEKITAR KAMPUS</p>
+                    <h2>Menu dari gerai</h2>
+                    <p class="section-description">Geser untuk melihat poster menu. Pilih kartu untuk membuka detail
+                        gerai.</p>
+                </div>
+                <div class="carousel-controls"><button class="round-control" data-scroll="menu-track"
+                        data-direction="-1" aria-label="Menu sebelumnya">←</button><button class="round-control"
+                        data-scroll="menu-track" data-direction="1" aria-label="Menu berikutnya">→</button></div>
+            </div>
+            <div class="carousel-track menu-track" id="menu-track"></div>
+        </section>
+        <section class="fee-callout">
+            <div>
+                <p class="eyebrow">SEBELUM PESAN</p>
+                <h2>Ongkirnya nggak perlu ditebak.</h2>
+                <p>Lihat biaya antar dan jadwal kedai pada halaman informasi ongkir.</p><a class="button button-light"
+                    href="ongkir.html" style="margin-top:16px">Cek info ongkir ↗</a>
+            </div>
+            <div class="fee-circle"><strong>5 gerai</strong><span>info ongkir</span></div>
+        </section>
+        <section class="note-strip"><span class="note-icon">i</span>
+            <p>Informasi ongkir mengikuti ketentuan yang tersedia. Untuk wilayah di luar keterangan, hubungi kedai untuk
+                konfirmasi.</p>
+        </section>
     </main>
-
-    <footer>
-        <p>
-            &copy; 2026 infoDeliv.
-            Informasi layanan delivery untuk mahasiswa.
-        </p>
+    <footer class="site-footer"><a class="brand footer-brand" href="index.html"><span
+                class="brand-mark">id</span><span><strong>infoDeliv</strong><small>Informasi delivery sekitar
+                    kampus.</small></span></a>
+        <p>© 2026 infoDeliv · Informasi kedai, menu, dan ongkir sekitar kampus.</p>
     </footer>
-
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
