@@ -9,19 +9,6 @@
 </head>
 
 <body>
-    <header class="site-header">
-        <a class="brand" href="index.html"><span
-                class="brand-mark">id</span><span><strong>infoDeliv</strong><small>Temukan makan, cek
-                    ongkir.</small></span></a>
-        <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Buka navigasi"
-            aria-expanded="false">☰</button>
-        <nav class="site-nav" id="site-nav">
-            <a href="../index.html">Dashboard</a>
-            <a href="../gerai.html">Gerai</a>
-            <a href="../ongkir.html">Info Ongkir</a>
-            <a href="../tambah.html">Tambah Layanan</a>
-        </nav>
-    </header>
     <main class="detail-main">
         <p class="breadcrumb"><a href="../index.html">Dashboard</a> / <a href="../gerai.html">Gerai</a> / Warung Sugema
         </p>
@@ -31,11 +18,7 @@
                 <h1>Warung Sugema</h1>
                 <p>Informasi kontak, wilayah layanan, ketentuan ongkir, dan poster menu.</p>
                 <p><strong>Kontak:</strong> 0813-1605-093</p>
-                <p><strong>Wilayah:</strong> Bandung</p><a class="button button-light" href="../gerai.html">← Kembali ke
-                    daftar gerai</a>
-            </div>
-            <div class="poster-wrap"><img class="detail-poster" src="../images/sugema.png"
-                    alt="Poster menu Warung Sugema"></div>
+                <p><strong>Wilayah:</strong> Bandung</p>
         </section>
         <section class="fee-panel">
             <p class="eyebrow">BIAYA PENGANTARAN</p>
@@ -51,17 +34,17 @@
             <h2>Poster menu Warung Sugema</h2>
             <p>Perbesar gambar untuk membaca daftar menu dan harga dengan lebih jelas.</p>
         </section>
-        <a class="detail-poster-link" href="../images/sugema.png" target="_blank" rel="noopener"><img
-                class="detail-poster" src="../images/sugema.png" alt="Daftar menu dan harga Warung Sugema"
-                loading="lazy"></a>
+        <a class="detail-poster-link" href="../images/sugema.png" target="_blank" rel="noopener">
+            <img class="detail-poster" src="../images/sugema.png" alt="Daftar menu dan harga Warung Sugema" loading="lazy">
+        </a>
         <a class="back-link" href="../gerai.html">← Kembali ke daftar gerai</a>
     </main>
-    <footer class="site-footer"><a class="brand footer-brand" href="index.html"><span
-                class="brand-mark">id</span><span><strong>infoDeliv</strong><small>Informasi delivery sekitar
-                    kampus.</small></span></a>
+    <footer class="site-footer">
+        <a class="brand footer-brand" href="../index.html">
+            <span class="brand-mark">id</span>
+            <span><strong>infoDeliv</strong><small>Informasi delivery sekitar kampus.</small></span>
+        </a>
         <p>© 2026 infoDeliv · Informasi kedai, menu, dan ongkir sekitar kampus.</p>
     </footer>
-    <script>const t = document.getElementById("nav-toggle"), n = document.getElementById("site-nav"); t.addEventListener("click", () => { const o = n.classList.toggle("open"); t.setAttribute("aria-expanded", String(o)); t.setAttribute("aria-label", o ? "Tutup navigasi" : "Buka navigasi"); });</script>
 </body>
-
 </html>
