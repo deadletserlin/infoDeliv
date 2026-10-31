@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,67 +9,130 @@
 
 <body>
     <header class="site-header">
-        <a class="brand" href="index.html"><span
-                class="brand-mark">id</span><span><strong>infoDeliv</strong><small>Temukan makan, cek
-                    ongkir.</small></span></a>
-        <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Buka navigasi"
-            aria-expanded="false">☰</button>
+        <a class="brand" href="index.html">
+            <span class="brand-mark">id</span>
+            <span>
+                <strong>infoDeliv</strong>
+                <small>Temukan makan, cek ongkir.</small>
+            </span>
+        </a>
+
+        <button class="nav-toggle" id="nav-toggle" type="button"
+            aria-label="Buka navigasi" aria-expanded="false">☰</button>
+
         <nav class="site-nav" id="site-nav">
             <a href="index.html">Dashboard</a>
             <a href="gerai.html">Gerai</a>
             <a href="ongkir.html">Info Ongkir</a>
         </nav>
     </header>
+
     <main>
         <section class="hero">
             <div class="hero-copy">
                 <p class="eyebrow">KULINER SEKITAR KAMPUS</p>
                 <h1>Makan enak,<br><em>ongkir jelas.</em></h1>
-                <p class="hero-description">Temukan gerai, lihat menu, dan cek informasi delivery tanpa harus mencari
-                    satu per satu.</p><a class="button button-light" href="gerai.html">Jelajahi gerai <span>↗</span></a>
+                <p class="hero-description">
+                    Temukan gerai, lihat menu, dan cek informasi delivery tanpa harus mencari satu per satu.
+                </p>
+                <a class="button button-light" href="gerai.html">
+                    Jelajahi gerai <span>↗</span>
+                </a>
             </div>
+
             <div class="hero-art" aria-hidden="true">
                 <div class="orbit orbit-one"></div>
                 <div class="orbit orbit-two"></div>
-                <div class="hero-note"><span>Teman lapar</span><strong>dekat kampus.</strong></div><span
-                    class="spark">✳</span>
+                <div class="hero-note">
+                    <span>Teman lapar</span>
+                    <strong>dekat kampus.</strong>
+                </div>
+                <span class="spark">✳</span>
             </div>
         </section>
+
         <section class="content-section">
             <div class="section-heading">
                 <div>
                     <p class="eyebrow">PILIHAN SEKITAR KAMPUS</p>
                     <h2>Menu dari gerai</h2>
-                    <p class="section-description">Geser untuk melihat poster menu. Pilih kartu untuk membuka detail
-                        gerai.</p>
+                    <p class="section-description">
+                        Geser untuk melihat poster menu. Pilih kartu untuk membuka detail gerai.
+                    </p>
                 </div>
-                <div class="carousel-controls"><button class="round-control" data-scroll="menu-track"
-                        data-direction="-1" aria-label="Menu sebelumnya">←</button><button class="round-control"
-                        data-scroll="menu-track" data-direction="1" aria-label="Menu berikutnya">→</button></div>
+
+                <div class="carousel-controls">
+                    <button class="round-control" data-scroll="menu-track"
+                        data-direction="-1" aria-label="Menu sebelumnya">←</button>
+                    <button class="round-control" data-scroll="menu-track"
+                        data-direction="1" aria-label="Menu berikutnya">→</button>
+                </div>
             </div>
+
             <div class="carousel-track menu-track" id="menu-track"></div>
         </section>
+
+        <section class="content-section">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">INFORMASI TAMBAHAN</p>
+                    <h2>Informasi Kuliner Tambahan</h2>
+                    <p class="section-description">
+                        Lihat informasi tambahan yang diambil dari sumber data API.
+                    </p>
+                </div>
+            </div>
+
+            <p id="api-loading">Sedang memuat data...</p>
+
+            <div id="api-error" hidden>
+                <p>Data gagal dimuat. Silakan coba lagi.</p>
+                <button class="button button-light" id="api-retry" type="button">
+                    Coba Lagi
+                </button>
+            </div>
+
+            <div class="api-list" id="api-list"></div>
+        </section>
+
         <section class="fee-callout">
             <div>
                 <p class="eyebrow">SEBELUM PESAN</p>
                 <h2>Ongkirnya nggak perlu ditebak.</h2>
-                <p>Lihat biaya antar dan jadwal kedai pada halaman informasi ongkir.</p><a class="button button-light"
-                    href="ongkir.html" style="margin-top:16px">Cek info ongkir ↗</a>
+                <p>Lihat biaya antar dan jadwal kedai pada halaman informasi ongkir.</p>
+                <a class="button button-light" href="ongkir.html" style="margin-top:16px">
+                    Cek info ongkir ↗
+                </a>
             </div>
-            <div class="fee-circle"><strong>5 gerai</strong><span>info ongkir</span></div>
+
+            <div class="fee-circle">
+                <strong>5 gerai</strong>
+                <span>info ongkir</span>
+            </div>
         </section>
-        <section class="note-strip"><span class="note-icon">i</span>
-            <p>Informasi ongkir mengikuti ketentuan yang tersedia. Untuk wilayah di luar keterangan, hubungi kedai untuk
-                konfirmasi.</p>
+
+        <section class="note-strip">
+            <span class="note-icon">i</span>
+            <p>
+                Informasi ongkir mengikuti ketentuan yang tersedia. Untuk wilayah di luar keterangan,
+                hubungi kedai untuk konfirmasi.
+            </p>
         </section>
     </main>
-    <footer class="site-footer"><a class="brand footer-brand" href="index.html"><span
-                class="brand-mark">id</span><span><strong>infoDeliv</strong><small>Informasi delivery sekitar
-                    kampus.</small></span></a>
+
+    <footer class="site-footer">
+        <a class="brand footer-brand" href="index.html">
+            <span class="brand-mark">id</span>
+            <span>
+                <strong>infoDeliv</strong>
+                <small>Informasi delivery sekitar kampus.</small>
+            </span>
+        </a>
+
         <p>© 2026 infoDeliv · Informasi kedai, menu, dan ongkir sekitar kampus.</p>
     </footer>
+
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="script.js"></script>
 </body>
-
 </html>
