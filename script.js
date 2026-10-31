@@ -1,141 +1,70 @@
-
 const dataLayanan = [
-    {
-        nama: "Warung Sugema",
-        kontak: "0813-1605-093",
-        wilayah: "Bandung",
-        gambar: "images/sugema.png",
-        detail: "detail-menu/detail-sugema.html"
-    },
-    {
-        nama: "Lestari",
-        kontak: "0813-1330-8864",
-        wilayah: "Bandung",
-        gambar: "images/lestari.png",
-        detail: "detail-menu/detail-lestari.html"
-    },
-    {
-        nama: "Dongmoon",
-        kontak: "0851-2104-0012",
-        wilayah: "Bandung, Jakarta",
-        gambar: "images/dongmoon.jpeg",
-        detail: "detail-menu/detail-dongmoon.html"
-    },
-    {
-        nama: "Chinese Food",
-        kontak: "+62 812-2327-8852",
-        wilayah: "Sukabirus, depan gate 2 WDP",
-        gambar: "images/chineseFood.jpeg",
-        detail: "detail-menu/detail-chineseFood.html"
-    },
-    {
-        nama: "Kantin Pahlawan",
-        kontak: "+62 895-1814-6988",
-        wilayah: "Sukapura",
-        gambar: "images/kantinPahlawan.jpeg",
-        detail: "detail-menu/detail-kantinPahlawan.html"
+    { nama: "Warung Sugema", kontak: "0813-1605-093", wilayah: "Bandung", gambar: "images/sugema.png", poster: "images/sugema.png", detail: "detail-menu/detail-sugema.html", ongkir: "Gratis ongkir ke asrama dan Sukapura", label: "Gratis asrama & Sukapura", gratis: true },
+    { nama: "Lestari", kontak: "0813-1330-8864", wilayah: "Bandung", gambar: "images/lestari.png", poster: "images/lestari.png", detail: "detail-menu/detail-lestari.html", ongkir: "Asrama gratis; Sukapura Rp1.000", label: "Asrama gratis · Sukapura Rp1.000", gratis: false },
+    { nama: "Dongmoon", kontak: "0851-2104-0012", wilayah: "Sekitar Telkom", gambar: "images/dongmoon.jpeg", poster: "images/dongmoon.jpeg", detail: "detail-menu/detail-dongmoon.html", ongkir: "Rp2.000 sekitar Telkom", label: "Rp2.000 sekitar Telkom", gratis: false },
+    { nama: "Chinese Food", kontak: "+62 812-2327-8852", wilayah: "Sukabirus, depan gate 2 WDP", gambar: "images/chineseFood.jpeg", poster: "images/chineseFood.jpeg", detail: "detail-menu/detail-chineseFood.html", ongkir: "Rp2.000 sekitar Telkom", label: "Rp2.000 sekitar Telkom", gratis: false },
+    { nama: "Kantin Pahlawan", kontak: "+62 895-1814-6988", wilayah: "Sukapura", gambar: "images/kantinPahlawan.jpeg", poster: "images/kantinPahlawan.jpeg", detail: "detail-menu/detail-kantinPahlawan.html", ongkir: "Gratis ongkir semua daerah", label: "Gratis ongkir semua daerah", gratis: true }
+  ];
+  
+  function kartuGerai(item) {
+    const labelClass = item.gratis ? "fee-label" : "fee-label paid";
+    return `<article class="store-card"><a href="${item.detail}"><img class="store-card-image" src="${item.gambar}" alt="Gambar ${item.nama}" loading="lazy"><div class="store-card-body"><p class="eyebrow">GERAI PILIHAN</p><h2>${item.nama}</h2><p class="store-location">${item.wilayah}</p><span class="${labelClass}">${item.label}</span><div class="card-link"><span>Lihat detail gerai</span><span>↗</span></div></div></a></article>`;
+  }
+  function kartuMenu(item) {
+    return `<article class="menu-card"><a href="${item.detail}"><img class="menu-card-image" src="${item.poster}" alt="Poster menu ${item.nama}" loading="lazy"><div class="menu-card-body"><p class="eyebrow">MENU DAN HARGA</p><h3>${item.nama}</h3><p class="store-location">Buka detail untuk melihat poster menu.</p><div class="card-link"><span>Lihat menu</span><span>↗</span></div></div></a></article>`;
+  }
+  function renderGerai(data, targetId, emptyId) {
+    const target = document.getElementById(targetId);
+    if (!target) return;
+    target.innerHTML = data.map(kartuGerai).join("");
+    if (emptyId) {
+      const empty = document.getElementById(emptyId);
+      empty.hidden = data.length > 0;
+      target.hidden = data.length === 0;
     }
-];
-
-function tampilkanLayanan(data) {
-    const tabel = document.getElementById("daftar-layanan");
-    const jumlah = document.getElementById("jumlah-layanan");
-
-    tabel.innerHTML = "";
-
-    if (data.length === 0) {
-        tabel.innerHTML = `
-            <tr>
-                <td colspan="6">Layanan tidak ditemukan.</td>
-            </tr>
-        `;
-    } else {
-        for (let i = 0; i < data.length; i++) {
-            tabel.innerHTML += `
-                <tr>
-                    <td>${data[i].nama}</td>
-                    <td>
-                        <img src="${data[i].gambar}"
-                             alt="Menu ${data[i].nama}"
-                             width="100">
-                    </td>
-                    <td>Delivery</td>
-                    <td>${data[i].kontak}</td>
-                    <td>${data[i].wilayah}</td>
-                    <td>
-                        <a href="${data[i].detail}">Lihat Detail</a>
-                    </td>
-                </tr>
-            `;
-        }
+  }
+  function renderMenu(data) {
+    const target = document.getElementById("menu-track");
+    if (target) target.innerHTML = data.map(kartuMenu).join("");
+  }
+  function renderTabelOngkir() {
+    const body = document.getElementById("tabel-ongkir-body");
+    if (!body) return;
+    body.innerHTML = dataLayanan.map(item => `<tr>
+      <td>${item.nama}</td><td>${item.ongkir}</td><td class="jam-buka">Isi jam buka</td><td class="jam-tutup">Isi jam tutup</td><td><a href="${item.detail}">Detail gerai ↗</a></td>
+    </tr>`).join("");
+  }
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMenu(dataLayanan);
+    renderGerai(dataLayanan, "daftar-gerai", "empty-state");
+    renderTabelOngkir();
+  
+    const search = document.getElementById("cari-layanan");
+    if (search) {
+      search.addEventListener("input", function () {
+        const term = search.value.toLowerCase().trim();
+        const result = dataLayanan.filter(item =>
+          item.nama.toLowerCase().includes(term) ||
+          item.wilayah.toLowerCase().includes(term) ||
+          item.ongkir.toLowerCase().includes(term)
+        );
+        renderGerai(result, "daftar-gerai", "empty-state");
+      });
     }
-
-    jumlah.textContent = "Jumlah layanan: " + data.length;
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-    tampilkanLayanan(dataLayanan);
-
-    const pencarian = document.getElementById("cari-layanan");
-
-
-    pencarian.addEventListener("input", function () {
-        const kataKunci = pencarian.value
-            .toLowerCase()
-            .trim();
-
-        const hasilFilter = dataLayanan.filter(function (layanan) {
-            const nama = layanan.nama.toLowerCase();
-            const wilayah = layanan.wilayah.toLowerCase();
-
-            return nama.includes(kataKunci) ||
-                wilayah.includes(kataKunci);
-        });
-
-        tampilkanLayanan(hasilFilter);
+    const clear = document.getElementById("hapus-pencarian");
+    if (clear && search) clear.addEventListener("click", () => { search.value = ""; renderGerai(dataLayanan, "daftar-gerai", "empty-state"); search.focus(); });
+  
+    document.querySelectorAll("[data-scroll]").forEach(button => button.addEventListener("click", () => {
+      const track = document.getElementById(button.dataset.scroll);
+      track.scrollBy({ left: Number(button.dataset.direction) * track.clientWidth * .8, behavior: "smooth" });
+    }));
+  
+    const navToggle = document.getElementById("nav-toggle");
+    const nav = document.getElementById("site-nav");
+    if (navToggle && nav) navToggle.addEventListener("click", () => {
+      const opened = nav.classList.toggle("open");
+      navToggle.setAttribute("aria-expanded", String(opened));
+      navToggle.setAttribute("aria-label", opened ? "Tutup navigasi" : "Buka navigasi");
     });
-
-});
-
-$(document).ready(function () {
-    $("#tombol-form").on("click", function () {
-        $("#area-form").slideToggle();
-
-        if ($(this).text() === "Tampilkan Form") {
-            $(this).text("Sembunyikan Form");
-        } else {
-            $(this).text("Tampilkan Form");
-        }
-    });
-
-    $("#form-layanan").on("submit", function (event) {
-        event.preventDefault();
-
-        const nama = $("#nama-layanan").val().trim();
-        const kontak = $("#kontak-layanan").val().trim();
-        const wilayah = $("#wilayah-layanan").val().trim();
-
-        if (nama === "" || kontak === "" || wilayah === "") {
-            $("#pesan-form").text("Semua kolom harus diisi.");
-            return;
-        }
-
-        const layananBaru = {
-            nama: nama,
-            kontak: kontak,
-            wilayah: wilayah,
-            gambar: "",
-            detail: "#"
-        };
-
-        dataLayanan.push(layananBaru);
-        tampilkanLayanan(dataLayanan);
-
-        $("#cari-layanan").val("");
-        $("#form-layanan")[0].reset();
-        $("#pesan-form").text("Layanan berhasil ditambahkan.");
-
-        $("#area-form").slideUp();
-        $("#tombol-form").text("Tampilkan Form");
-    });
-});
+  });
+  
