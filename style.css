@@ -601,9 +601,7 @@ main {
 
 .detail-hero {
     display: grid;
-    grid-template-columns: 1fr .85fr;
-    gap: 28px;
-    align-items: center;
+    grid-template-columns: 1fr;
     padding: clamp(20px, 4vw, 40px);
     border-radius: 20px;
     background: linear-gradient(130deg, #e6f0e9, #f8e9d9)
