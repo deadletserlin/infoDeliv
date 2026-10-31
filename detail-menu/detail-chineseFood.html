@@ -1,46 +1,66 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail Chinese Food - infoDeliv</title>
+    <title>Chinese Food — infoDeliv</title>
     <link rel="stylesheet" href="../style.css">
 </head>
+
 <body>
-    <header>
-        <h1>infoDeliv</h1>
-        <p>Informasi layanan delivery untuk mahasiswa</p>
-        <nav>
-            <a href="../index.html">Beranda</a>
+    <header class="site-header">
+        <a class="brand" href="index.html"><span
+                class="brand-mark">id</span><span><strong>infoDeliv</strong><small>Temukan makan, cek
+                    ongkir.</small></span></a>
+        <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Buka navigasi"
+            aria-expanded="false">☰</button>
+        <nav class="site-nav" id="site-nav">
+            <a href="../index.html">Dashboard</a>
+            <a href="../gerai.html">Gerai</a>
+            <a href="../ongkir.html">Info Ongkir</a>
             <a href="../tambah.html">Tambah Layanan</a>
         </nav>
     </header>
-
-    <main>
-        <h2>Detail Layanan Chinese Food</h2>
-
-        <article class="info-layanan">
-            <img
-                src="../images/chineseFood.jpeg"
-                alt="Gambar layanan Chinese Food"
-                width="250"
-            >
-
-            <h3>Chinese Food</h3>
-            <p><strong>Kontak:</strong> +62 812-2327-8852</p>
-            <p><strong>Wilayah:</strong> Sukabirus, depan gate 2 WDP</p>
-            <p>
-                Halaman ini berisi informasi kontak dan lokasi layanan
-                Chinese Food untuk membantu mahasiswa menemukan layanan
-                makanan di sekitar area kampus.
-            </p>
-
-            <a href="../index.html">Kembali ke Daftar Layanan</a>
-        </article>
+    <main class="detail-main">
+        <p class="breadcrumb"><a href="../index.html">Dashboard</a> / <a href="../gerai.html">Gerai</a> / Chinese Food
+        </p>
+        <section class="detail-hero">
+            <div>
+                <p class="eyebrow">DETAIL GERAI</p>
+                <h1>Chinese Food</h1>
+                <p>Informasi kontak, wilayah layanan, ketentuan ongkir, dan poster menu.</p>
+                <p><strong>Kontak:</strong> +62 812-2327-8852</p>
+                <p><strong>Wilayah:</strong> Sukabirus, depan gate 2 WDP</p><a class="button button-light"
+                    href="../gerai.html">← Kembali ke daftar gerai</a>
+            </div>
+            <div class="poster-wrap"><img class="detail-poster" src="../images/chineseFood.jpeg"
+                    alt="Poster menu Chinese Food"></div>
+        </section>
+        <section class="fee-panel">
+            <p class="eyebrow">BIAYA PENGANTARAN</p>
+            <h2>Info ongkir</h2>
+            <div class="fee-list">
+                <div class="fee-item"><strong>Sekitar Telkom</strong><span>Rp2.000</span></div>
+            </div>
+            <p class="section-description">Untuk wilayah di luar keterangan, silakan konfirmasi langsung ke kedai.</p>
+        </section>
+        <section class="poster-heading">
+            <p class="eyebrow">MENU DAN HARGA</p>
+            <h2>Poster menu Chinese Food</h2>
+            <p>Perbesar gambar untuk membaca daftar menu dan harga dengan lebih jelas.</p>
+        </section>
+        <a class="detail-poster-link" href="../images/chineseFood.jpeg" target="_blank" rel="noopener"><img
+                class="detail-poster" src="../images/chineseFood.jpeg" alt="Daftar menu dan harga Chinese Food"
+                loading="lazy"></a>
+        <a class="back-link" href="../gerai.html">← Kembali ke daftar gerai</a>
     </main>
-
-    <footer>
-        <p>&copy; 2026 infoDeliv. Informasi layanan delivery untuk mahasiswa.</p>
+    <footer class="site-footer"><a class="brand footer-brand" href="index.html"><span
+                class="brand-mark">id</span><span><strong>infoDeliv</strong><small>Informasi delivery sekitar
+                    kampus.</small></span></a>
+        <p>© 2026 infoDeliv · Informasi kedai, menu, dan ongkir sekitar kampus.</p>
     </footer>
+    <script>const t = document.getElementById("nav-toggle"), n = document.getElementById("site-nav"); t.addEventListener("click", () => { const o = n.classList.toggle("open"); t.setAttribute("aria-expanded", String(o)); t.setAttribute("aria-label", o ? "Tutup navigasi" : "Buka navigasi"); });</script>
 </body>
+
 </html>
