@@ -25,7 +25,6 @@
             <a href="index.html">Dashboard</a>
             <a href="gerai.html">Gerai</a>
             <a href="ongkir.html">Info Ongkir</a>
-            <a class="active" href="tambah.html">Tambah Layanan</a>
         </nav>
     </header>
 
@@ -36,33 +35,29 @@
             <p>Isi formulir berikut untuk menambahkan informasi layanan delivery.</p>
         </section>
 
-        <div class="add-layout">
-            <button type="button" id="btn-form">+ Tambah Layanan</button>
+        <form class="add-form" id="formLayanan">
+            <h2>Formulir Layanan</h2>
+            <label for="nama">Nama Gerai</label>
+            <input type="text" id="nama" placeholder="Masukkan nama gerai">
 
-            <form class="add-form" id="formLayanan" style="display: none;">
-                <h2>Formulir Layanan</h2>
+            <label for="kontak">Nomor Kontak</label>
+            <input type="text" id="kontak" placeholder="Masukkan nomor kontak">
 
-                <label for="nama">Nama Gerai</label>
-                <input type="text" id="nama" placeholder="Masukkan nama gerai" required>
+            <label for="wilayah">Wilayah Layanan</label>
+            <input type="text" id="wilayah" placeholder="Masukkan wilayah layanan">
 
-                <label for="kontak">Nomor Kontak</label>
-                <input type="text" id="kontak" placeholder="Masukkan nomor kontak" required>
+            <label for="ongkir">Informasi Ongkir</label>
+            <input type="text" id="ongkir" placeholder="Contoh: Rp2.000">
 
-                <label for="wilayah">Wilayah Layanan</label>
-                <input type="text" id="wilayah" placeholder="Masukkan wilayah layanan" required>
+            <label for="deskripsi">Deskripsi</label>
+            <textarea id="deskripsi" placeholder="Informasi tambahan tentang gerai"></textarea>
 
-                <label for="ongkir">Informasi Ongkir</label>
-                <input type="text" id="ongkir" placeholder="Contoh: Rp2.000" required>
-
-                <label for="deskripsi">Deskripsi</label>
-                <textarea id="deskripsi" placeholder="Informasi tambahan tentang gerai" required></textarea>
-
-                <div class="form-buttons">
-                    <button type="submit">Simpan</button>
-                    <button type="reset" class="reset-btn">Reset</button>
-                </div>
-            </form>
-        </div>
+            <div class="form-buttons">
+                <button type="submit">Simpan</button>
+                <button type="reset" class="reset-btn">Reset</button>
+            </div>
+            <p id="pesan-form" style="display: none;"></p>
+        </form>
     </main>
 
     <footer class="site-footer">
@@ -77,20 +72,17 @@
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
     <script>
         const t = document.getElementById("nav-toggle");
         const n = document.getElementById("site-nav");
 
-        t.addEventListener("click", () => {
+        t.addEventListener("click", function () {
             const buka = n.classList.toggle("open");
             t.setAttribute("aria-expanded", String(buka));
         });
 
         $(document).ready(function () {
-            $("#btn-form").on("click", function () {
-                $("#formLayanan").stop(true, true).slideToggle();
-            });
-
             $("#formLayanan").on("submit", function (e) {
                 e.preventDefault();
 
@@ -100,15 +92,34 @@
                 const ongkir = $("#ongkir").val().trim();
                 const deskripsi = $("#deskripsi").val().trim();
 
+                const pesan = $("#pesan-form");
+
                 if (!nama || !kontak || !wilayah || !ongkir || !deskripsi) {
-                    alert("Semua kolom harus diisi!");
+                    pesan.text("Semua kolom harus diisi!");
+                    pesan.css("color", "red");
+                    pesan.fadeIn();
                     return;
                 }
 
-                alert("Data layanan berhasil divalidasi!");
+                let daftar = JSON.parse(localStorage.getItem("geraiTambahan")) || [];
+
+                daftar.push({
+                    nama: nama,
+                    kontak: kontak,
+                    wilayah: wilayah,
+                    ongkir: ongkir,
+                    deskripsi: deskripsi
+                });
+
+                localStorage.setItem("geraiTambahan", JSON.stringify(daftar));
+
+                pesan.text("Data layanan berhasil ditambahkan!");
+                pesan.css("color", "green");
+                pesan.fadeIn();
+
+                this.reset();
             });
         });
     </script>
 </body>
-
 </html>
