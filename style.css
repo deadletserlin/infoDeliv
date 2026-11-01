@@ -1013,7 +1013,7 @@ main {
         animation-duration: .01ms !important
     }
 }
-/* Form tambah" itu loh */
+/* Form add" itu*/
 .add-form[style*="block"] {
     display: flex !important;
 }
@@ -1062,32 +1062,4 @@ main {
     margin-bottom: 0;
     font-size: 13px;
     font-weight: 700;
-}
-/* tugas 7 api */
-.api-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-}
-
-.api-card {
-    padding: 22px;
-    background: #fff;
-    border: 1px solid #e8e4dc;
-    border-radius: 14px;
-}
-
-.api-card h3 {
-    margin-bottom: 10px;
-    font-size: 18px;
-}
-
-.api-card p {
-    color: #777;
-    line-height: 1.6;
-}
-
-#api-loading,
-#api-error {
-    margin: 16px 0;
 }
